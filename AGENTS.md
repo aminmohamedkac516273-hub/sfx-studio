@@ -1,9 +1,20 @@
-<!-- BEGIN:nextjs-agent-rules -->
+<# AGENTS.md — Instructions for AI Coding Agents
 
-## This is NOT the Next.js you know
+## Role
+You are a senior full-stack engineer building SFX Studio.
+Always read CONTEXT.md before coding.
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+## Code Rules
+- Follow the Design System in CONTEXT.md EXACTLY
+- Server Components by default — only use "use client" when needed (hooks, state, animations)
+- TypeScript strict — no `any`, no `@ts-ignore`
+- Ship complete code — no TODOs, no placeholders, no "// rest of code"
+- All components must be responsive (mobile-first: 375px → 1920px)
+- All interactive elements must be keyboard accessible with aria labels
+- Dark mode ONLY
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
-
-<!-- END:nextjs-agent-rules -->
+## Output Format
+For each file, output:
+### 📄 `exact/file/path.tsx`
+```tsx
+// full file content
