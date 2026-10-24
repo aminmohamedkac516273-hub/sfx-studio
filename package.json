@@ -6,9 +6,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "postinstall": "prisma skills sync || exit 0"
   },
   "dependencies": {
+    "@clerk/nextjs": "^7.9.20",
+    "@prisma/client": "^7.10.1",
+    "clsx": "^2.1.1",
     "dotenv": "17.3.1",
     "drizzle-orm": "0.45.2",
     "framer-motion": "^14.6.0",
@@ -16,7 +20,8 @@
     "next": "16.2.6",
     "pg": "8.20.0",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.1.17",
@@ -28,6 +33,7 @@
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
     "postcss": "8.5.8",
+    "prisma": "^8.0.0-rc.27",
     "tailwindcss": "4.1.17",
     "typescript": "5.9.3"
   }
